@@ -33,7 +33,7 @@ function setKeyField(obj, val) {
 
 }
 var x = new myFun(52, "ASD", 78);
-console.log(x._version + ", " + x._channel + ", " + x._keyField);
+console.log(x);
 
 console.log(getVersion(x));
 console.log(getChannel(x));
