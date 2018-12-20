@@ -15,7 +15,7 @@ var obj = [{
   "name": "asdf"
 }]; //json object created.
 
-var groupObjectsBy = function(obj) {
+function groupObjectsBy(obj) {
 
   for (i = 0; i < obj.length; i++) {
     var channel = obj[i].channel;
@@ -33,13 +33,3 @@ var groupObjectsBy = function(obj) {
   return res;
 }
 console.log(groupObjectsBy(obj));
-
-
-// var groupObjectsBy = function(object, property) {
-//   return object.reduce(function(result, x) {
-//     (result[x[property]] = result[x[property]] || []).push(x);
-//     return result;
-//   }, {});
-// };
-//
-// console.log(groupObjectsBy(obj, 'channel'));
