@@ -1,7 +1,7 @@
 var fs = require('fs');
 var request = require('request');
 var async = require('async');
-var pathFront = "./images/",
+var pathFront = "./images/Folder",
   dir;
 var pathExtention = '.jpg';
 var imgURL = [
@@ -25,11 +25,11 @@ function newDir(i = 0) {
 function pathSet(key) {
   var path = parseInt(key / 5);
   newDir(path + 1);
-  return dir + key + pathExtention;
+  return dir + (key + 1) + pathExtention;
 }
 
 async.parallel(async.forEachOf(imgURL, function(value, key, callback) {
-  console.log(key, value)
+  //console.log(key, value)
   options = {
     uri: value,
     encoding: 'binary'
@@ -41,11 +41,11 @@ async.parallel(async.forEachOf(imgURL, function(value, key, callback) {
 
         if (err) console.log("err");
         else {
-          console.log(pathFront + key + pathExtention +
+          console.log(dir + (key + 1) + pathExtention +
             " written!!");
         }
       })
-    console.log("File: " + key + pathExtention + " read");
+    console.log("File: " + (key + 1) + pathExtention + " read");
   })
   callback();
 
