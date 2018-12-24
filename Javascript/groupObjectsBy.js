@@ -27,10 +27,9 @@ function groupObjectsBy(obj) {
           result[currentChannel] = [];
           result[currentChannel].push(obj[y]);
         } else {
-          if (result[currentChannel].indexOf(obj[y]) == -1)
-            result[currentChannel].push(obj[y])
+          if (result[currentChannel].indexOf(obj[y]) == -1) // no match found
+            result[currentChannel].push(obj[y]);
         }
-
       }
     }
   }
