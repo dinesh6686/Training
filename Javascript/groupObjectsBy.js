@@ -16,20 +16,24 @@ var obj = [{
 }]; //json object created.
 
 function groupObjectsBy(obj) {
+  var result = {};
+  for (var x in obj) {
+    //console.log(x)
+    var currentChannel = obj[x].channel;
+    for (var y in obj) {
 
-  for (i = 0; i < obj.length; i++) {
-    var channel = obj[i].channel;
-    if (!groupObjectsBy[channel]) {
-      groupObjectsBy[channel] = [];
+      if (currentChannel === obj[y].channel) {
+        if (!result.hasOwnProperty(currentChannel)) {
+          result[currentChannel] = [];
+          result[currentChannel].push(obj[y]);
+        } else {
+          if (result[currentChannel].indexOf(obj[y]) == -1)
+            result[currentChannel].push(obj[y])
+        }
+
+      }
     }
-    groupObjectsBy[channel].push(JSON.stringify(obj[i]));
   }
-  var res = [];
-  for (var channel in groupObjectsBy) {
-    res.push({
-      channel, obj: groupObjectsBy[channel]
-    })
-  }
-  return res;
+  return result;
 }
 console.log(groupObjectsBy(obj));
