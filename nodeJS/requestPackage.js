@@ -6,9 +6,10 @@ var request = require('request');
 
 request('http://www.google.com', function(error, response, body) {
   //console.log('body:', body);
-  console.log("Checkout Google.html file!!");
+
   // Print the HTML for the Google homepage.
   fs.writeFile(path, body, function(err) {
-    console.log("error");
+    if (err) console.log("err");
+    else console.log("Checkout Google.html file!!");
   })
 });
