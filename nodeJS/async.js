@@ -38,7 +38,6 @@ async.parallel(async.forEachOf(imgURL, function(value, key, callback) {
 
     fs.writeFile(pathSet(key), body, 'binary',
       function(err) {
-
         if (err) console.log("err");
         else {
           console.log(dir + (key + 1) + pathExtention +
