@@ -16,7 +16,7 @@ var imgURL = [
   "https://media.glassdoor.com/l/e9/c1/7a/84/independence-day-celebration.jpg"
 ]
 
-function newDir(i = 0) {
+function newDir(i) {
   if (!fs.existsSync(pathFront + i)) //if there's no img dir, create a new one.
     fs.mkdirSync(pathFront + i);
   dir = pathFront + i + '/image';
