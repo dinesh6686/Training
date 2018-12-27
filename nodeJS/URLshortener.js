@@ -1,5 +1,8 @@
-var shortUrl = require('node-url-shortener');
+//var shortUrl = require('node-url-shortener');
+//var url = require('short-url');
+var TinyURL = require('tinyurl');
 var csv = require('node-csv').createParser();
+//var async = require('async');
 var imgURL = [
   "http://sousmonarbre.com/qphj/bd963843d2239ed78aa6f7b0a36b537d/qdp/shapely-table-mat-design-office-bay-decoration-mes-at-work-decorating-ideas-office-decoration-mes-design-ideas-cream-wall-paint-decoration-messroom-wooden-laminate-ing-tosca-color__office-decorating-ideas.jpg",
   "https://doodleart.redbull.com/assets/managed/entries/processed/sm/367010617181759_36211000.jpg",
@@ -13,16 +16,28 @@ var imgURL = [
 ];
 
 function urlShortner() {
-  for (var i in imgURL) {
-    shortUrl.short(imgURL[i], function(err, url) {
-      var str = "Complete URL: " + imgURL[i] + ",Short URL: " + url +
-        "\n";
+  for (i in imgURL) {
+    TinyURL.shorten(imgURL[i], function(url) {
+      var str = url + "\n";
       csv.parse(str, function(err, data) {
         console.log(data);
       })
     });
+    // console.log(imgURL[i]);
+    // async.parallel(async.forEachOf(imgURL, function(value, key, callback) {
+    // shortUrl.short(imgURL[i], function(err, url) {
+    //     console.log(imgURL[i], url);
+    //     if (err) console.log(err);
+    //      var str = "Complete URL: " + imgURL[i] + ",Short URL: " + url +  "\n";
+    //     // csv.parse(str, function(err, data) {
+    //     //   console.log(data);
+    //     //   if (err) console.log(err);
+    //     // })
+    //   })
+    // callback();
   }
-
+  // ));
+  // }
 }
 
 urlShortner();
