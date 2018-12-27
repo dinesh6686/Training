@@ -3,16 +3,16 @@
   <product>
     <baseId>{{baseId}}</baseId>
     <isActive>{{isActive}}</isActive>
-    <contentType>
-      {{#each contentType}}
-      <contentTypeValue>{{value}}</contentTypeValue>
-      {{/each}}
-    </contentType>
     <features>
       {{#each feature}}
       <feature>{{this}}</feature>
       {{/each}}
     </features>
+    <contentType>
+      {{#each contentType}}
+      <contentTypeValue>{{value}}</contentTypeValue>
+      {{/each}}
+    </contentType>
     <searchTerms>
       {{#each searchTerms}}
       <searchTermValue>{{this}}</searchTermValue>
