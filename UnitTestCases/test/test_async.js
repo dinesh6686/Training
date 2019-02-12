@@ -8,7 +8,7 @@ describe('---GoogleHomePage---', function() {
   before(function(done){
     nock('http://www.google.com')
     .get('/')
-    .reply(200,'response matched')
+    .reply(201,'response matched')
     done();
   })
 
@@ -20,8 +20,9 @@ describe('---GoogleHomePage---', function() {
   it.only('googleHomepageBody', function(done){
     googleHomePage.body(function(response,body){
       chai.assert.equal(body,'response matched');
-      chai.assert.equal(response.statusCode,200);
+      chai.assert.equal(response.statusCode,201);
+      done();
     })
-    done();
+
   })
 })
