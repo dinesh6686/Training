@@ -8,7 +8,7 @@ var json = {
         'account':'TSTDRV1288246',
         'roleId':'3',
         'email':'dinesh.venkat@celigo.com',
-        'password':'Dinesh@26496',
+        'password':'**********',
         'environment':'production',
         'requestLevelCredentials':false,
         'dataCenterURLs':{

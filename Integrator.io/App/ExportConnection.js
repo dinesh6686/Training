@@ -11,7 +11,7 @@ var json={
         'pingMethod':'GET',
         'basicAuth':{
             'username':'dinesh.venkat@celigo.com',
-            'password':'dinesh26496'
+            'password':'***********'
         }
     }
 }
